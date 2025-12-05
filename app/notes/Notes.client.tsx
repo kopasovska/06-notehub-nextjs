@@ -21,6 +21,7 @@ const NotesClient = () => {
     queryKey: ['notes', currentPage, search],
     queryFn: () => fetchNotes(currentPage, search),
     placeholderData: keepPreviousData,
+    refetchOnMount: false,
   });
 
   useEffect(() => {

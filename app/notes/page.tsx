@@ -7,7 +7,7 @@ import NotesClient from './Notes.client';
 import { fetchNotes } from '@/lib/api';
 
 type NotesProps = {
-  searchParams: { page: number; search: string };
+  searchParams: { page: string; search: string };
 };
 
 const Notes = async ({ searchParams }: NotesProps) => {
