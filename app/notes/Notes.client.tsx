@@ -36,7 +36,7 @@ const NotesClient = () => {
   const handleSearch = useDebouncedCallback((value: string) => {
     setSearch(value);
     setCurrentPage(1);
-  }, 1000);
+  }, 300);
 
   return (
     <div className={css.app}>
