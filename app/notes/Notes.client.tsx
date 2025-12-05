@@ -17,7 +17,7 @@ const NotesClient = () => {
   const [search, setSearch] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { data, isLoading, isError } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['notes', currentPage, search],
     queryFn: () => fetchNotes(currentPage, search),
     placeholderData: keepPreviousData,
