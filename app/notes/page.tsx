@@ -6,19 +6,12 @@ import {
 import NotesClient from './Notes.client';
 import { fetchNotes } from '@/lib/api';
 
-type NotesProps = {
-  searchParams: { page: string; search: string };
-};
-
-const Notes = async ({ searchParams }: NotesProps) => {
-  const currentPage = Number(searchParams.page) || 1;
-  const search = searchParams.search || '';
-
+const Notes = async () => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ['notes', currentPage, search],
-    queryFn: () => fetchNotes(currentPage, search),
+    queryKey: ['notes', 1, ''],
+    queryFn: () => fetchNotes(1, ''),
   });
 
   return (
